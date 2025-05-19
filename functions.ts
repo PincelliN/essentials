@@ -10,3 +10,17 @@ function logAndThrow(message: string): never {
   console.log(message);
   throw new Error(message);
 }
+
+function performJobs(cb: () => void) {
+  cb();
+}
+
+function performJobs2(cb: (element: string) => void) {
+  cb("element");
+}
+
+type userJob = {
+  name: string;
+  lastName: string;
+  callback: () => void;
+};
